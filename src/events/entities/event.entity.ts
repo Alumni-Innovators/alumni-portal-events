@@ -1,4 +1,4 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 // import mongoose, { ObjectId } from 'mongoose';
 
 @Schema()
@@ -20,3 +20,5 @@ export class Event {
   @Prop({ required: true }) createdBy: string;
   @Prop({ required: true }) approvedBy: string;
 }
+
+export const EventSchema = SchemaFactory.createForClass(Event);
